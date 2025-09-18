@@ -65,10 +65,18 @@ namespace TPColeccionDeDatos
             return resultado;
         }
 
-        public bool altaLector(Lector)
+        public bool altaLector(Lector lector)
         {
-            //  gestionar alta a un lector dentro de la lista
-            //  "lectores" si es no se encuentra previamente registrado
+            bool resultado = false;
+            foreach (var lectorExistente in lectores)
+            {
+                if (lectorExistente.Dni == lector.Dni)
+                {
+                    return resultado;
+                }
+            }
+            lectores.Add(lector);
+            return resultado = true;
         }
 
         public string prestarLibro(string titulo, int dniLector)
