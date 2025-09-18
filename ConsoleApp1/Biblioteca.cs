@@ -57,7 +57,7 @@ namespace TPColeccionDeDatos
         {
             bool resultado = false;
             Libro libro = buscarLibro(titulo);
-            if(libro == null)
+            if(libro != null)
             {
                 libros.Remove(libro);
                 resultado = true;
