@@ -7,12 +7,13 @@ namespace TPColeccionDeDatos
     {
         internal string Nombre { get; }
         internal int Dni { get; }
-        internal List<Libro> librosEnPosesion;
+        internal List<Libro> librosEnPosesion { get; }
 
         public Lector(string nombre, int dni)
         {
             Nombre = nombre;
             Dni = dni;
+            librosEnPosesion = new List<Libro>();
         }
 
         public void listarLibros()
