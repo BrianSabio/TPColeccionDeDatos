@@ -130,11 +130,16 @@ namespace TPColeccionDeDatos
             if (lector != null && libro != null)
             {
 
-                if ()
+                if (lector.librosEnPosesion.Count > 2)
                 {
-                    // LÓGICA TOPE PRESTAMO ALCANZADO
+                    Console.WriteLine("TOPE DE PRESTAMO ALCANZADO");
                 }
-                // PRESTAMO EXITOSO
+                else
+                {
+                    lector.librosEnPosesion.Add(libro);
+                    librosDisponibles.Remove(libro);
+                    Console.WriteLine("PRESTAMO EXITOSO");
+                }
 
             } else if (lector == null)
             {

@@ -7,7 +7,7 @@ namespace TPColeccionDeDatos
     {
         internal string Nombre { get; }
         internal int Dni { get; }
-        private List<Libro> librosEnPosesion;
+        internal List<Libro> librosEnPosesion;
 
         public Lector(string nombre, int dni)
         {
@@ -17,7 +17,7 @@ namespace TPColeccionDeDatos
 
         public void listarLibros()
         {
-            Console.WriteLine("Libros prestados: ");
+            Console.WriteLine("Libros en posesión: ");
             foreach (Libro libro in librosEnPosesion)
             {
                 Console.WriteLine(libro.ToString());

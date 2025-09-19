@@ -20,6 +20,5 @@ namespace TPColeccionDeDatos
         {
             return $"Libro {{ Titulo: '{Titulo}', Autor: '{Autor}', Editorial: '{Editorial}' }}";
         }
-
     }
 }
