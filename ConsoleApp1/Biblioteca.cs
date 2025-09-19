@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 
 namespace TPColeccionDeDatos
 {
@@ -8,13 +9,13 @@ namespace TPColeccionDeDatos
     {
         private List<Lector> lectores;
         private List<Libro> libros;
-        private List<Libro> librosPrestados;
+        private List<Libro> librosDisponibles;
 
         public Biblioteca() 
         {
             lectores = new List<Lector>();
             libros = new List<Libro>();
-            librosPrestados = new List<Libro>();
+            librosDisponibles = new List<Libro>();
         }
 
         private Libro buscarLibro(string titulo)
@@ -53,6 +54,14 @@ namespace TPColeccionDeDatos
             }
         }
 
+        public void listarLectores()
+        {
+            foreach (Lector lector in lectores)
+            {
+                Console.WriteLine(lector);
+            }
+        }
+
         public bool eliminarLibro(string titulo)
         {
             bool resultado = false;
@@ -65,22 +74,37 @@ namespace TPColeccionDeDatos
             return resultado;
         }
 
-        public bool altaLector(Lector lector)
+        private Lector buscarLector(int dni)
+        {
+            Lector lectorBuscado = null;
+            int i = 0;
+            while (i < lectores.Count && !lectores[i].Dni.Equals(dni))
+            {
+                i++;
+            }
+            if (i != lectores.Count)
+            {
+                lectorBuscado = lectores[i];
+            }
+            return lectorBuscado;
+        }
+
+        public bool altaLector(string nombre, int dni)
         {
             bool resultado = false;
-            foreach (var lectorExistente in lectores)
+            Lector lector = buscarLector(dni);
+            if (lector == null)
             {
-                if (lectorExistente.Dni == lector.Dni)
-                {
-                    return resultado;
-                }
+                lector = new Lector(nombre, dni);
+                lectores.Add(lector);
+                resultado = true;
             }
-            lectores.Add(lector);
-            return resultado = true;
+            return resultado;
         }
 
         public string prestarLibro(string titulo, int dniLector)
         {
+
             /*
             Posibles valores:
 
@@ -97,6 +121,29 @@ namespace TPColeccionDeDatos
             "LECTOR INEXISTENTE" (cuando el lector no es se encuentra 
             registrado dentro de la colección de lectores en la biblioteca)
             */
+
+            librosDisponibles = libros;
+
+            Libro libro = buscarLibro(titulo);
+            Lector lector = buscarLector(dniLector);
+
+            if (lector != null && libro != null)
+            {
+
+                if ()
+                {
+                    // LÓGICA TOPE PRESTAMO ALCANZADO
+                }
+                // PRESTAMO EXITOSO
+
+            } else if (lector == null)
+            {
+                Console.WriteLine("LECTOR INEXISTENTE");
+            }
+            else
+            {
+                Console.WriteLine("LIBRO INEXISTENTE");
+            }
         }
     }
 }

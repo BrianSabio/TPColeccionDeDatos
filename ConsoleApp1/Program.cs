@@ -8,7 +8,9 @@ namespace TPColeccionDeDatos
         {
             Biblioteca biblioteca = new Biblioteca();
             biblioteca.agregarLibro("Jorge", "AutorEjemplo", "EditorialEjemplo");
-            biblioteca.listarLibros();
+            biblioteca.altaLector("Brian Sabio", 38298279);
+            biblioteca.altaLector("Pedre Buetemente", 38986239);
+            biblioteca.listarLectores();
         }
     }
 }
