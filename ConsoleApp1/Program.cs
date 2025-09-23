@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace TPColeccionDeDatos
 {
     internal class Program
@@ -7,12 +6,12 @@ namespace TPColeccionDeDatos
         static void Main(string[] args)
         {
             Biblioteca biblioteca = new Biblioteca();
-            biblioteca.agregarLibro("Jorge", "AutorEjemplo", "EditorialEjemplo");
-            biblioteca.altaLector("Brien Sabio", 34475574);
-            biblioteca.altaLector("Pedre Bustamante", 35000001);
+            biblioteca.agregarLibro("El principito", "Antoine de Saint-Exupéry", "Reynal & Hitchcock");
+            biblioteca.altaLector("Lionel Messi", 34475974);
+            biblioteca.altaLector("Ricardo Darín", 84296254);
             biblioteca.listarLectores();
-            biblioteca.prestarLibro("Jorge", 35000001);
-            biblioteca.lectores[1].listarLibros();
+            biblioteca.prestarLibro("El principito", 34475974);
+            biblioteca.lectores[0].listarLibros();
 
         }
     }

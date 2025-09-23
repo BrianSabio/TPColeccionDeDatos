@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿
 namespace TPColeccionDeDatos
 {
     internal class Lector
@@ -18,7 +16,7 @@ namespace TPColeccionDeDatos
 
         public void listarLibros()
         {
-            Console.WriteLine("Libros en posesión: ");
+            Console.WriteLine("\nLibros en posesión: ");
             foreach (Libro libro in librosEnPosesion)
             {
                 Console.WriteLine(libro.ToString());

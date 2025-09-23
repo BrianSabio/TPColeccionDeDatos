@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-
+﻿
 namespace TPColeccionDeDatos
 {
     internal class Biblioteca
@@ -58,6 +54,7 @@ namespace TPColeccionDeDatos
 
         public void listarLectores()
         {
+            Console.WriteLine("Lista de lectores: ");
             foreach (Lector lector in lectores)
             {
                 Console.WriteLine(lector);
@@ -119,22 +116,22 @@ namespace TPColeccionDeDatos
 
                 if (lector.librosEnPosesion.Count > 2)
                 {
-                    resultado = "TOPE DE PRESTAMO ALCANZADO";
+                    resultado = "\nTOPE DE PRÉSTAMO ALCANZADO";
                 }
                 else
                 {
                     lector.librosEnPosesion.Add(libro);
                     libros.Remove(libro);
-                    resultado = "PRESTAMO EXITOSO";
+                    resultado = "\nPRÉSTAMO EXITOSO";
                 }
 
             } else if (lector == null)
             {
-                resultado = "LECTOR INEXISTENTE";
+                resultado = "\nLECTOR INEXISTENTE";
             }
             else
             {
-                resultado = "LIBRO INEXISTENTE";
+                resultado = "\nLIBRO INEXISTENTE";
             }
 
             Console.WriteLine(resultado);
